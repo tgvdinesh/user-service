@@ -21,10 +21,10 @@ DROP TABLE IF EXISTS `user_management`.`user` ;
 
 CREATE TABLE IF NOT EXISTS `user_management`.`user` (
   `user_id` INT NOT NULL AUTO_INCREMENT,
+  `user_name` VARCHAR(45) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `email_address` VARCHAR(45) NOT NULL,
-  `user_name` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `created_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
