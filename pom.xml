@@ -39,9 +39,8 @@
         </dependency>
         <!--ODS-->
         <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <scope>runtime</scope>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <!--Functional & Unit testing-->
         <dependency>

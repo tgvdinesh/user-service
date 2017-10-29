@@ -18,6 +18,7 @@ docker-compose up -d
 # Road map
 - [X] Add Spring Boot dependency
 - [X] Add Database dependency
+- [ ] Add MySQL JPA
 - [ ] Create user API
 - [ ] Authentication
 - [ ] Authorization
