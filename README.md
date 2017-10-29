@@ -7,4 +7,18 @@ For example
 4. Admin page for user management.
 
 # Database
-Docker compose for easy database setup
+Make sure you have docker up and running. Manually import the DDL from resources directory
+
+~~~
+docker stop mysql-user-management
+docker rm mysql-user-management
+docker-compose up -d
+~~~
+
+# Road map
+- [X] Add Spring Boot dependency
+- [X] Add Database dependency
+- [ ] Create user API
+- [ ] Authentication
+- [ ] Authorization
+- [ ] OAuth
