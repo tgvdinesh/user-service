@@ -1,0 +1,6 @@
+# Truncate and select count
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE user;
+SET FOREIGN_KEY_CHECKS = 1;
+SELECT COUNT(*)
+FROM user;
