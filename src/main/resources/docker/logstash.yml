@@ -1,0 +1,10 @@
+http.host: 0.0.0.0
+index.number_of_replicas: 0
+index.number_of_shards: 1
+path.config: /usr/share/logstash/pipeline
+xpack.monitoring.elasticsearch.password: passw0rd
+xpack.monitoring.elasticsearch.url:
+- http://es-prod-node-1:9200
+- http://es-prod-node-2:9200
+xpack.monitoring.elasticsearch.username: elastic
+xpack.monitoring.enabled: false
