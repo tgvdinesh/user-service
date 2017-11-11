@@ -17,8 +17,8 @@ spring:
       ddl-auto: validate
   datasource:
     url: jdbc:mysql://localhost:3306/user_management?useSSL=false
-    username: root
-    password: passw0rd
+    username: admin
+    password: '@passw0rd'
     driver-class-name: com.mysql.jdbc.Driver
     schema: classpath:/mysql/ddl.sql
     data: classpath:/mysql/dml.sql

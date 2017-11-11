@@ -15,6 +15,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * This is wrong. Never allow any methods to return all records via API. This possibly gives away all records in case of hacking.
+     *
+     * @return Return all user data
+     */
     @Override
     public Optional<List<User>> getUsers() {
         List<User> users = userRepository.findAll();
