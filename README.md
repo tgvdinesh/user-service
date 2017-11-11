@@ -23,11 +23,12 @@ mvn clean install spring-boot:run
 - [X] Add MySQL JPA
 - [X] Add Swagger API Documentation
 - [X] Add init script for unix
-- [ ] Pagination to get user data
 - [ ] Add ELK for logging
 - [ ] Use [Petstore Swagger UI](http://petstore.swagger.io/)
 - [ ] [Move Swagger configuration to yml file](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#info-object-example)
+- [ ] [Elastic search node replica](http://chrissimpson.co.uk/elasticsearch-yellow-cluster-status-explained.html)
 - [ ] Add test case for getting user
+- [ ] Pagination to get user data
 - [ ] [Docker structure](https://github.com/deviantony/docker-elk)
 - [ ] Create user API
 - [ ] Authentication

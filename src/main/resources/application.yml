@@ -22,3 +22,12 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     schema: classpath:/mysql/ddl.sql
     data: classpath:/mysql/dml.sql
+logging:
+  file: logs/application-debug.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: INFO
+    com.howtodoinjava: INFO
+    org.hibernate: INFO
