@@ -1,0 +1,30 @@
+{
+  "info": {
+    "name": "User Service",
+    "_postman_id": "4671cd5c-2983-b7b6-07a4-66cabbfb7216",
+    "description": "User Service with Authentication & Authorization",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All User",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "{{host}}/admin/users",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "admin",
+            "users"
+          ]
+        },
+        "description": "Gets all the available user data including sensitive information"
+      },
+      "response": []
+    }
+  ]
+}

@@ -9,7 +9,7 @@ For example
 # Pre requisites
 1. Make sure you have docker up and running
 2. Run init script
-3. Database 
+
 ~~~
 docker stop mysql-user-management
 docker rm mysql-user-management

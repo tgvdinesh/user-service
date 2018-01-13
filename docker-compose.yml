@@ -2,80 +2,26 @@ version: '3'
 services:
   mysql:
     image: mysql
-    container_name: mysql_ums
+    container_name: user_service_mysql
     environment:
       MYSQL_ROOT_PASSWORD: passw0rd
-      MYSQL_DATABASE: user_management
+      MYSQL_DATABASE: user_service
       MYSQL_USER: admin
       MYSQL_PASSWORD: "@passw0rd"
     ports:
       - 3306:3306
     volumes:
       - /var/lib/mysql
+      - ./metaData/sql/ddl.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./metaData/sql/dml.sql:/docker-entrypoint-initdb.d/2-data.sql
     restart: always
     networks:
-      - ums
-  elasticsearch:
-      image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
-      container_name: elasticsearch_ums
-      environment:
-        - http.host=0.0.0.0
-        - transport.host=0.0.0.0
-        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      volumes:
-        - esdata:/usr/share/elasticsearch/data
-        - ./src/main/resources/docker/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      ports:
-        - 9200:9200
-        - 9300:9300
-      ulimits:
-        memlock:
-          soft: -1
-          hard: -1
-        nofile:
-          soft: 65536
-          hard: 65536
-      cap_add:
-        - IPC_LOCK
-      restart: always
-  logstash:
-      image: docker.elastic.co/logstash/logstash:5.4.0
-      container_name: logstash_ums
-      links:
-        - elasticsearch
-      environment:
-        - SERVER_HOST=0.0.0.0
-        - 'xpack.monitoring.elasticsearch.password=passw0rd'
-      volumes:
-        - ./src/main/resources/docker/logstash.yml:/usr/share/logstash/config/logstash.yml
-      ports:
-        - 5000:5000
-        - "5001:5001/udp"
-      depends_on:
-        - elasticsearch
-      restart: always
-  kibana:
-    image: docker.elastic.co/kibana/kibana:5.4.0
-    container_name: kibana_ums
-    environment:
-      - SERVER_HOST=0.0.0.0
-    volumes:
-      - ./src/main/resources/docker/kibana.yml:/usr/share/kibana/config/kibana.yml
-    ports:
-      - 5601:5601
-    restart: always
-  headPlugin:
-    image: mobz/elasticsearch-head:5
-    container_name: head_ums
-    ports:
-      - 9100:9100
-    restart: always
-
+      - user_service_network
 volumes:
   mysql_data:
   esdata:
     driver: local
 
 networks:
-  ums:
+  user_service_network:
     driver: bridge

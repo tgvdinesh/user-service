@@ -60,3 +60,5 @@ fabric.properties
 
 # MySQL Workbench
 *.bak
+
+.DS_Store
