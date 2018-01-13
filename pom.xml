@@ -12,7 +12,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.release>8</maven.compiler.release>
-        <spring-fox-version>2.7.0</spring-fox-version>
+        <spring-fox-version>LATEST</spring-fox-version>
     </properties>
 
     <parent>

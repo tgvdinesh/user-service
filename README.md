@@ -20,7 +20,8 @@ mvn clean install spring-boot:run
 - [X] Add Database dependency
 - [X] Add MySQL JPA
 - [X] Add init script for unix
-- [ ] Add Swagger API Documentation
+- [X] Add [Swagger API Documentation](http://localhost:8080/swagger-ui.html)
+- [ ] Use [new Swagger implementation](https://springfox.github.io/springfox/docs/current/) 
 - [ ] Use [Petstore Swagger UI](http://petstore.swagger.io/)
 - [ ] [Move Swagger configuration to yml file](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#info-object-example)
 - [ ] Authenticate & Authorize of Swagger API
