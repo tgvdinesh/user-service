@@ -21,16 +21,17 @@ mvn clean install spring-boot:run
 - [X] Add MySQL JPA
 - [X] Add init script for unix
 - [X] Add [Swagger API Documentation](http://localhost:8080/swagger-ui.html)
+- [ ] Authentication
+- [ ] Authorization
+- [ ] OAuth
 - [ ] Use [new Swagger implementation](https://springfox.github.io/springfox/docs/current/) 
 - [ ] Use [Petstore Swagger UI](http://petstore.swagger.io/)
 - [ ] [Move Swagger configuration to yml file](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#info-object-example)
 - [ ] Authenticate & Authorize of Swagger API
-- [ ] Authentication
-- [ ] Authorization
-- [ ] OAuth
 - [ ] Add ELK for logging
 - [ ] [Elastic search node replica](http://chrissimpson.co.uk/elasticsearch-yellow-cluster-status-explained.html)
 - [ ] Add test case for getting user
 - [ ] Admin -> Pagination to get user data
 - [ ] [Docker structure](https://github.com/deviantony/docker-elk)
 - [ ] Create user API
+- [ ] Role-Based Access Control (RBAC)[[1]](https://en.wikipedia.org/wiki/Role-based_access_control)[[2]](https://dba.stackexchange.com/a/1744)

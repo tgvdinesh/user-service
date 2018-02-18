@@ -1,4 +1,4 @@
-package com.management.user.init;
+package com.management.user.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ public class SwaggerConfiguration {
     @Bean
     public Docket postsApi() {
         return new Docket(DocumentationType.SWAGGER_2).groupName("public-api")
-                .apiInfo(apiInfo()).select().paths(regex("/admin.*")).build();
+                .apiInfo(apiInfo()).select().paths(regex("/.*")).build();
     }
 
     private ApiInfo apiInfo() {

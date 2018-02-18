@@ -6,6 +6,7 @@ import com.management.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,5 +26,29 @@ public class UserServiceImpl implements UserService {
         List<User> users = userRepository.findAll();
         if (users.size() == 0) return Optional.empty();
         else return Optional.of(users);
+    }
+
+    @Override
+    public Optional<User> getUser(int userID) {
+        return Optional.of(userRepository.getOne(userID));
+    }
+
+    /**
+     * Checks if user exists in ODS with username/email address with password
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public Optional<User> getUser(@NotNull User user) {
+        if (user.getEmailAddress() == null && user.getUserName() == null) return Optional.empty();
+        else if (user.getPassword() == null || user.getPassword().equalsIgnoreCase("")) return Optional.empty();
+        else if (user.getUserName() != null && !user.getUserName().equalsIgnoreCase("")) {
+            return Optional.empty();
+        } else if (user.getUserName() != null && !user.getUserName().equalsIgnoreCase("")) {
+            return Optional.empty();
+        } else {
+            return Optional.empty();
+        }
     }
 }
